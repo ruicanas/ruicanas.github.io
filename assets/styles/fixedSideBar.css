@@ -1,38 +1,122 @@
-/* The sidebar menu */
-.fixedsidebar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+:root {
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace; /* TODO */
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
 }
 
-/* The navigation menu links */
-.fixedsidebar a {
-  padding: 6px 8px 6px 16px;
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* #region scroll bar */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: grey;
+}
+/* #endregion */
+
+main {
+  margin-left: 20rem;
+  padding: 1rem;
+}
+
+/* #region navigation bar */
+.navbar {
+  width: 20rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-primary);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-item {
+  margin-bottom: 1rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-primary);
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
 }
 
-/* When you mouse over the navigation links, change their color */
-.fixedsidebar a:hover {
-  color: #f1f1f1;
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  color: var(--text-secondary);
+}
+/* #endregion
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  main {
+    margin: 0;
+    height: calc(100vh - 7rem); /* Set the height of the container to 100% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling within the container */
+  }
+
+  /* #region scroll bar */
+  body {
+    overflow: hidden;
+  }
+
+  main::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  main::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  main::-webkit-scrollbar-thumb {
+    background: grey;
+  }
+  /* #endregion */
+
+  .nav-item {
+    margin-right: 1rem;
+  }
 }
 
-/* Style page content */
-.main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .fixedsidebar {padding-top: 15px;}
-  .fixedsidebar a {font-size: 18px;}
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 20rem;
+    height: 100vh;
+  }
 }
