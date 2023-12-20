@@ -6,11 +6,11 @@
     --header-height: 3rem;
 
     /*========== Colors ==========*/
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 220; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color: hsl(var(--hue-color), 60%, 50%);
+    --first-color-second: hsl(var(--hue-color), 60%, 50%);
     --first-color-alt: hsl(var(--hue-color), 57%, 53%);
     --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
     --title-color: hsl(var(--hue-color), 8%, 15%);
@@ -21,6 +21,35 @@
     --container-color: #fff;
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /*========== Dark Theme ==========*/
+    body.dark-theme {
+      --first-color-second: hsl(var(--hue-color), 30%, 5%);
+      --title-color: hsl(var(--hue-color), 8%, 85%);
+      --text-color: hsl(var(--hue-color), 8%, 65%);
+      --input-color: hsl(var(--hue-color), 29%, 10%);
+      --body-color: hsl(var(--hue-color), 28%, 8%);
+      --container-color: hsl(var(--hue-color), 29%, 10%);
+      --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+      --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+    }
+
+    /*========== Button Dark/Light ==========*/
+    .nav__btns {
+      display: flex;
+      align-items: center;
+    }
+
+    .change-theme {
+      font-size: 1.25rem;
+      color: var(--title-color);
+      margin-right: var(--mb-1);
+      cursor: pointer;
+    }
+    
+    .change-theme:hover {
+      color: var(--first-color);
+    }
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -91,6 +120,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease-in-out;
 }
 
 h1, h2, h3, h4 {
@@ -151,6 +181,7 @@ img {
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
+  transition: background-color 0.3s ease-in-out;
 }
 
 /*==================== NAV ====================*/
@@ -277,6 +308,10 @@ img {
   .nav__list {
     display: flex;
     row-gap: 2rem;
+  }
+
+  .change-theme {
+    margin-left: 1rem;
   }
   
   .nav__menu {

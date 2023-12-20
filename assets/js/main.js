@@ -35,3 +35,26 @@ function scrollHeader() {
     else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
+
+/*==================== DARK/LIGHT THEME ====================*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const iconTheme = "uil-sun";
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const toggleTheme = (themeClass, iconClass) => {
+  document.body.classList.toggle(themeClass);
+  themeButton.classList.toggle(iconClass);
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+};
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
+
+if (selectedTheme) {
+  toggleTheme(selectedTheme === "dark" ? darkTheme : "", selectedIcon === "uil-moon" ? iconTheme : "");
+}
+
+themeButton.addEventListener("click", () => toggleTheme(darkTheme, iconTheme));
