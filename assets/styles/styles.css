@@ -21,6 +21,7 @@
     --container-color: #fff;
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    --btn-color: hsl(var(--hue-color), 60%, 50%);
 
     /*========== Dark Theme ==========*/
     body.dark-theme {
@@ -32,6 +33,7 @@
       --container-color: hsl(var(--hue-color), 29%, 10%);
       --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
       --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+      --btn-color: hsl(var(--hue-color), 29%, 10%)
     }
 
     /*========== Button Dark/Light ==========*/
@@ -97,12 +99,6 @@
     }
 }
 
-/*========== Variables Dark theme ==========*/
-
-
-/*========== Button Dark/Light ==========*/
-
-
 /*==================== BASE ====================*/
 * {
   box-sizing: border-box;
@@ -147,7 +143,7 @@ img {
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--h1-font-size); 
   color: var(--title-color);
 }
 
@@ -326,9 +322,91 @@ img {
 
 /*==================== HOME ====================*/
 
+#home {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.home__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.home__pic-container img {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.home__text {
+  align-self: center;
+  text-align: center;
+}
+
+.home__text p {
+  font-weight: 600;
+}
+
+.home__text__p1 {
+  text-align: center;
+}
+
+.home__text__p2 {
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+}
+
+.home__title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+}
+
 
 /*==================== BUTTONS ====================*/
 
+.btn-container {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300 ease;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: var(--first-color) 0.1rem solid;
+}
+
+.btn-color-1 {
+  background: var(--first-color-alt);
+  color: white;
+}
+
+.btn-color-2 {
+  color: var(--first-color);
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1:hover {
+  background: var(--first-color);
+  color: white;
+}
+
+.btn-color-2:hover {
+  background: var(--first-color);
+  color: white;
+}
 
 /*==================== ABOUT ====================*/
 

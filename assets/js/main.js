@@ -43,9 +43,9 @@ const iconTheme = "uil-sun";
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
-const toggleTheme = (themeClass, iconClass) => {
-  document.body.classList.toggle(themeClass);
-  themeButton.classList.toggle(iconClass);
+const toggleTheme = () => {
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 };
@@ -53,8 +53,8 @@ const toggleTheme = (themeClass, iconClass) => {
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? "dark" : "light";
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
 
-if (selectedTheme) {
-  toggleTheme(selectedTheme === "dark" ? darkTheme : "", selectedIcon === "uil-moon" ? iconTheme : "");
+if (selectedTheme === "dark" || selectedIcon === "uil-moon") {
+  toggleTheme();
 }
 
-themeButton.addEventListener("click", () => toggleTheme(darkTheme, iconTheme));
+themeButton.addEventListener("click", toggleTheme);
