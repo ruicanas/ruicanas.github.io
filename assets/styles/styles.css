@@ -139,12 +139,17 @@ img {
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
-  padding: 2rem 0 4rem;
+  padding: 4vh 0 4rem;
+  margin: 0 10rem;
+  height: 96vh;
+  box-sizing: border-box;
+  min-height: fit-content;
 }
 
 .section__title {
   font-size: var(--h1-font-size); 
   color: var(--title-color);
+  margin-bottom: 1rem;
 }
 
 .section__subtitle {
@@ -341,25 +346,25 @@ img {
   border-radius: 50%;
 }
 
-.home__text {
+.section__text {
   align-self: center;
   text-align: center;
 }
 
-.home__text p {
+.section__text p {
   font-weight: 600;
 }
 
-.home__text__p1 {
+.section__text__p1 {
   text-align: center;
 }
 
-.home__text__p2 {
+.section__text__p2 {
   font-size: var(--h2-font-size);
   margin-bottom: 2rem;
 }
 
-.home__title {
+.section__title {
   font-size: var(--h1-font-size);
   text-align: center;
 }
@@ -410,6 +415,56 @@ img {
 
 /*==================== ABOUT ====================*/
 
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 1rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  border-radius: 1rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: var(--first-color);
+  text-align: center;
+}
+
+.details__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.section-container {
+  display: flex;
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  min-width: 400px;
+  margin: auto 0;
+}
 
 /*==================== SKILLS ====================*/
 
